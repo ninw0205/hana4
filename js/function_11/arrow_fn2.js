@@ -4,7 +4,7 @@ this.age = 33;
 
 // ⇔ function declareFn(name) {
 const expressFn = function(name) {
-  // if, 'use strict' ?
+  // if, 'use strict' -> this 무력화
   this.name = name;
   console.log(this, new.target, this.name, name);
 }
@@ -20,4 +20,4 @@ expressFn('expfn');
 
 // const dfn = new expressFn('D'); // new를 선언하면 new.target은 자기를 가리킴, this는 expressFn이 인스턴스화가 된 것을 가리킴
 // console.log("🚀 ~ dfn.name:", dfn.name)
-const afn = new arrowFn('A'); // error!
+// const afn = new arrowFn('A'); // error! constructor도 가질 수 없고 new.target도 값이 없음
